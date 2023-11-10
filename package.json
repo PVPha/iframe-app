@@ -1,0 +1,30 @@
+{
+    "name": "portalrm",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint"
+    },
+    "dependencies": {
+        "@emotion/react": "^11.10.6",
+        "@emotion/styled": "^11.10.6",
+        "@mui/material": "^5.11.10",
+        "@mui/styled-engine-sc": "^5.11.9",
+        "@reduxjs/toolkit": "^1.9.3",
+        "axios": "^1.3.4",
+        "eslint": "8.35.0",
+        "eslint-config-next": "13.2.1",
+        "firebase": "^9.17.1",
+        "next": "13.2.1",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "react-hotjar": "^5.4.1",
+        "react-redux": "^8.0.5",
+        "sass": "^1.58.3",
+        "sharp": "^0.31.3",
+        "styled-components": "^5.3.6"
+    }
+}
