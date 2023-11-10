@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import Head from 'next/head';
+import ReactDOMServer from 'react-dom/server';
 
 export default function Home() {
     useEffect(() => {
@@ -22,8 +23,32 @@ export default function Home() {
         window.parent.postMessage({ checked, id: 'HD88888', link: 'http://localhost:8080/' }, '*');
     };
 
-    const onLinkClick = (link) => {
-        window.parent.postMessage({ type: 'link', link }, '*');
+    const onLinkClick = (type) => {
+        let content = null;
+        switch (type) {
+            case '1':
+            case '2':
+            case '3':
+                content = ReactDOMServer.renderToString(
+                    <>
+                        <h3>Các dấu hiệu Hoa Kỳ</h3>
+                        <ul>
+                            <li>Là công dân Hoa Kỳ</li>
+                            <li>Là đối tượng cư trú tại Hoa Kỳ</li>
+                            <li>Nơi sinh tại Hoa Kỳ</li>
+                            <li>Có SĐT liên lạc tại Hoa Kỳ</li>
+                            <li>Có địa chỉ nhận thư bao gồm hợp thư bưu điện và địa chỉ thường trú tại Hoa Kỳ</li>
+                            <li>Hướng dẫn hiện hành để chuyển tiền vào tài khoản được duy trì ở Hoa Kỳ</li>
+                            <li>Giấy ủy quyền hoặc ủy quyền ký tên hiện đang có hiệu lực cấp cho người có địa chỉ ở Hoa Kỳ</li>
+                            <li>Địa chỉ nhận thư hộ hoặc giữ thư tại Hoa Kỳ</li>
+                        </ul>
+                    </>,
+                );
+
+            default:
+                break;
+        }
+        window.parent.postMessage({ type: 'dialog', content }, '*');
     };
 
     const onFetch = (params) => {
@@ -52,14 +77,12 @@ export default function Home() {
                     <ul>
                         <li className='mt-16px'>
                             Đọc và đồng ý với{' '}
-                            <span onClick={() => onLinkClick('đề nghị kiêm hợp đồng mở và sử dụng TKTT, dịch vụ eBanking, HDBank Loyalty')}>
-                                Đề nghị kiêm hợp đồng mở và sử dụng TKTT, dịch vụ eBanking, HDBank Loyalty
-                            </span>{' '}
-                            và <span onClick={() => onLinkClick('điều khoản, điều kiện')}>Điều khoản, điều kiện.</span>
+                            <span onClick={() => onLinkClick('1')}>Đề nghị kiêm hợp đồng mở và sử dụng TKTT, dịch vụ eBanking, HDBank Loyalty</span> và{' '}
+                            <span onClick={() => onLinkClick('2')}>Điều khoản, điều kiện.</span>
                         </li>
                         <li className='mt-16px'>
-                            Không có <span onClick={() => onLinkClick('dấu hiệu Hoa Kỳ')}>Dấu hiệu Hoa Kỳ</span> và đồng ý cho HD SAISON cung cấp thông tin của
-                            tôi cho HDBank để mở TKTT.
+                            Không có <span onClick={() => onLinkClick('3')}>Dấu hiệu Hoa Kỳ</span> và đồng ý cho HD SAISON cung cấp thông tin của tôi cho HDBank
+                            để mở TKTT.
                         </li>
                     </ul>
                 </div>
