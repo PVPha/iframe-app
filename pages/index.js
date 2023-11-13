@@ -154,12 +154,13 @@ export default function Home() {
                         <div class='modal__body' style={{ overflowY: 'auto' }}>
                             <ul
                                 class='ul'
-                                style={{
-                                    listStyleType: 'disc',
-                                    marginLeft: 0,
-                                    paddingLeft: '1.5rem',
-                                    lineHeight: '1.5',
-                                }}>
+                                // style={{
+                                //     listStyleType: 'disc',
+                                //     marginLeft: 0,
+                                //     paddingLeft: '1.5rem',
+                                //     lineHeight: '1.5',
+                                // }}
+                                >
                                 <li>Là công dân Hoa Kỳ</li>
                                 <li>Là đối tượng cư trú tại Hoa Kỳ</li>
                                 <li>Nơi sinh tại Hoa Kỳ</li>
