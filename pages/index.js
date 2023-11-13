@@ -81,7 +81,7 @@ export default function Home() {
                 document.querySelector('#mainWebView').style.display = 'none';
                 document.querySelector('#DHHK').style.display = 'block';
                 const wrapper = window.parent.document.getElementById('HDBWebview');
-                setOriginStyle(wrapper.style.height);
+                console.log(wrapper);
                 wrapper.setAttribute(
                     'style',
                     'display: block; position: fixed; top: 50%;left: 50%;max-width: 480px;margin-inline: 16px;width: 100%;transform: translate(-50%, -50%);background-color: white;padding: 16px;border-radius: 8px;',
